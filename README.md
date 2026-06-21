@@ -4,7 +4,6 @@
 
 ## 환경
 복잡하지 않은, 단순한 커머스 도메인으로 구성되어 있고 MSA 환경을 가정한다. (멘토님들이 일하는 환경이 대부분 MSA)
-https://wikidocs.net/book/18401 를 기반으로 코드베이스를 깐다.
 
 ## 목적
 - 멘토링을 통해 배운 내용을 적용해본다.
@@ -20,9 +19,11 @@ https://wikidocs.net/book/18401 를 기반으로 코드베이스를 깐다.
 - 오버엔지니어링을 "지향"한다.
 - 실무와 조금이라도 비슷한 환경을 구축하고, 그 위에서 문제를 고민하고 해결한다.
     - 단, 시작은 모놀리식에서 시작한다. 모놀리식을 MSA로 전환하는 일을 해볼 수도 있기 때문이다.
-    - 이후 MSA, Fegin, SAGA, Resilence4j, EDA, Kafka, CQRS, Webflux, Coroutine, K8s, Grafana, Istio, Service mesh 이런 키워드들을 적용해본다.  
+    - 이후 MSA, Feign, SAGA, Resilence4j, EDA, Kafka, CQRS, Webflux, Coroutine, K8s, Grafana, Istio, Service mesh 이런 키워드들을 적용해본다.  
 - 비즈니스 규칙을 복잡하게 구성하지 않는다.
     - 엔지니어링 키워드를 적용해보는 것이 목적이다.
     - 개념 객체와 DB 엔티티를 분리시키지 않는다. JPA 엔티티로 묶어서 사용한다.
         - 손수 코드를 작성할 예정이라, 비용이 너무 많이 들기 때문이고, 비즈니스 규칙을 가볍게 유지할 것이기 때문이다.
-
+- 실 부하 테스트는 진행하지 않는다. 비즈니스까지 고려한 다른 프로젝트에서 진행할 예정이다.
+- 다만 Terraform을 이용해서 t3.small/micro 같은 인스턴스 위에 배포는 진행한다.
+- Light DDD를 기반으로 Bounded Context를 나눠 진행한다. Well-known한 DDD 설계 결과를 사용한다.
